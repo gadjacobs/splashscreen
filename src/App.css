@@ -34,6 +34,25 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background: rgb(53, 126, 221);
-  /* padding-top: 20px; */
+  background: rgb(54, 77, 121);
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.ant-carousel .slick-dots {
+  bottom: 0 !important;
+}
+
+.ant-carousel .slick-slide img {
+  display: inline-block;
 }

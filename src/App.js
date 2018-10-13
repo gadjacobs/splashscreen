@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import ReactLoading from "react-loading";
-import styled from "tachyons-components";
+import { Carousel } from "antd";
+import "antd/es/carousel/style/index.css";
+import Splash from "./Splash";
+import Card from './Card';
 
-// Please ignore the lack of seperation of concerns. I was in a hurry, but I could refactor after you run the test.
-
-const Section = styled("div")`
-flex flex-wrap content-center justify-center w-100 h-100 bg-blue`;
-
-const Title = styled("h1")`
-f4 f3-ns white w-100 tc`;
+function onChange(a, b, c) {
+  console.log(a, b, c);
+}
 
 class App extends Component {
   constructor(props) {
@@ -23,30 +20,41 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setTimePassed();
-    }, 5000);
+    }, 3000);
   }
 
   setTimePassed() {
     this.setState({ timePassed: true });
   }
+
   render() {
     if (!this.state.timePassed) {
-      return (
-        <Section>
-          <Title>
-            This splash screen will disappear after five (5) seconds...
-          </Title>
-          <ReactLoading type="bars" color="#fff" />
-        </Section>
-      );
+      return <Splash />;
     } else {
       return (
-        <div className="App">
-          <header className="App-header">
-            <h1>DEALIN.IO</h1>
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>Hello Mr. Issa, I hope you liked the splash screen?</p>
-          </header>
+        <div className="">
+          <Carousel afterChange={onChange}>
+          <Card
+            name="Issa Salad"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas at lectus id vestibulum. Proin condimentum auctor orci, a viverra."
+            imageUrl="https://icon-icons.com/icons2/550/PNG/512/business-color_business-contact-86_icon-icons.com_53469.png" />
+
+          <Card
+            name="Jane Doe"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas at lectus id vestibulum. Proin condimentum auctor orci, a viverra."
+            imageUrl="https://bilingolinos-kita.eu/wp-content/uploads/2015/01/user-310807_640.png" />
+
+          <Card
+            name="Gad Jacobs"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas at lectus id vestibulum. Proin condimentum auctor orci, a viverra."
+            imageUrl="https://icon-icons.com/icons2/550/PNG/512/business-color_business-contact-86_icon-icons.com_53469.png" />
+
+          <Card
+            name="John Doe"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas at lectus id vestibulum. Proin condimentum auctor orci, a viverra."
+            imageUrl="https://png.icons8.com/office/1600/collaborator-male.png" />
+
+          </Carousel>
         </div>
       );
     }

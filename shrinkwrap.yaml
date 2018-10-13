@@ -1,0 +1,12 @@
+dependencies:
+  tachyons: 4.11.1
+packages:
+  /tachyons/4.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-n5zIZ8i8kZ8vz05vX1BdvkP8b9ufsMeSRmdqTuUtz5rlNxr03nntiZMc/HTADIsPYZj/wZJDJglxV0/yvvaiZA==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  tachyons: ^4.11.1
