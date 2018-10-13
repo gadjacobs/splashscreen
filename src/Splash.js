@@ -3,7 +3,7 @@ import ReactLoading from "react-loading";
 import styled from "tachyons-components";
 
 const Section = styled("div")`
-flex flex-wrap content-center justify-center w-100 h-100 bg-blue`;
+flex flex-wrap content-center justify-center w-100 h-100`;
 
 const Title = styled("h1")`
 f4 f3-ns white w-100 tc`;
